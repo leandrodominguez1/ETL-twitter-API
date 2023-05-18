@@ -1,0 +1,80 @@
+# Proyecto ETL de Twitter
+
+Este proyecto consiste en un proceso de Extracción, Transformación y Carga (ETL) de tweets de Twitter. Permite ingresar el nombre de una cuenta de Twitter y la cantidad de tweets a obtener. Utiliza la biblioteca Tweepy para extraer los tweets de la cuenta especificada y luego los carga en una base de datos PostgreSQL.
+
+## Requisitos previos
+
+- Python 3.x instalado en el sistema.
+- Acceso a internet para realizar consultas a la API de Twitter.
+- Una base de datos PostgreSQL configurada y accesible.
+- Claves de la API de Twitter y configuración de la base de datos en un archivo `.env`.
+
+## Configuración
+
+1. Clona o descarga este repositorio en tu máquina local.
+
+2. Crea un entorno virtual para el proyecto:
+
+```bash
+python -m venv myenv
+```
+
+
+3. Activa el entorno virtual:
+
+- En Windows:
+  ```
+  myenv\Scripts\activate
+  ```
+
+- En macOS/Linux:
+  ```
+  source myenv/bin/activate
+  ```
+
+4. Instala las dependencias necesarias:
+
+```bash
+pip install -r config/requirements.txt
+```
+
+
+5. Configuración de las claves y la configuración de la base de datos:
+
+- Crea un archivo llamado `.env` en la raíz del proyecto.
+- En el archivo `.env`, agrega las siguientes líneas y reemplaza los valores correspondientes:
+
+  ```
+  # Configuración de las claves de la API de Twitter
+  TWITTER_API_KEY=your_twitter_api_key
+  TWITTER_API_SECRET=your_twitter_api_secret
+  TWITTER_ACCESS_TOKEN=your_twitter_access_token
+  TWITTER_ACCESS_TOKEN_SECRET=your_twitter_access_token_secret
+  TWITTER_BEARER_TOKEN=your_twitter_bearer_token
+
+  # Configuración de la base de datos PostgreSQL
+  DB_HOST=your_db_host
+  DB_NAME=your_db_name
+  DB_USER=your_db_user
+  DB_PASSWORD=your_db_password
+  ```
+
+- Guarda el archivo `.env` con las claves y la configuración adecuada.
+
+## Uso
+
+1. Ejecuta el script principal `main.py`.
+
+2. El script te solicitará ingresar el nombre de la cuenta de Twitter y la cantidad de tweets que deseas obtener.
+
+3. El proceso ETL se ejecutará, extrayendo los tweets utilizando la API de Twitter a través de la biblioteca Tweepy. Luego, los datos se transformarán y cargarán en la base de datos PostgreSQL utilizando la configuración del archivo `.env`.
+
+4. Una vez finalizado el proceso, recibirás un mensaje indicando que el proceso fue realizado correctamente.
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Si encuentras algún error, tienes ideas para mejoras o deseas agregar nuevas características, no dudes en abrir un problema o enviar una solicitud de extracción.
+
+## Licencia
+
+Este proyecto está bajo la licencia [MIT](LICENSE).
